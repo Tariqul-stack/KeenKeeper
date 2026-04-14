@@ -1,5 +1,6 @@
 import "./globals.css";
 import NavBar from "@/components/NavBar";
+import { Toaster } from "sonner";
 
 export const metadata = {
   title: "KeenKeeper",
@@ -12,6 +13,7 @@ export default function RootLayout({ children }) {
       <body>
         <NavBar />
         {children}
+          <Toaster position="top-right" richColors />
       </body>
     </html>
   );

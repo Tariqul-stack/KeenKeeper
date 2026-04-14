@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import QuickCheckIn from "@/components/QuickCheckIn";
 
 const FriendDetailsPage = async ({ params }) => {
   const { id } = await params;
@@ -136,34 +137,7 @@ const FriendDetailsPage = async ({ params }) => {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-            <h2 className="text-2xl font-bold text-[#1F5C4A]">
-              Quick Check-In
-            </h2>
-
-            <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
-              <button className="rounded-2xl border border-slate-200 p-8 text-center transition hover:bg-slate-50">
-                <Phone className="mx-auto text-[#1F5C4A]" size={34} />
-                <span className="mt-4 block text-2xl font-medium text-slate-700">
-                  Call
-                </span>
-              </button>
-
-              <button className="rounded-2xl border border-slate-200 p-8 text-center transition hover:bg-slate-50">
-                <MessageSquare className="mx-auto text-[#1F5C4A]" size={34} />
-                <span className="mt-4 block text-2xl font-medium text-slate-700">
-                  Text
-                </span>
-              </button>
-
-              <button className="rounded-2xl border border-slate-200 p-8 text-center transition hover:bg-slate-50">
-                <Video className="mx-auto text-[#1F5C4A]" size={34} />
-                <span className="mt-4 block text-2xl font-medium text-slate-700">
-                  Video
-                </span>
-              </button>
-            </div>
-          </div>
+          <QuickCheckIn friend={friend} />
         </div>
       </div>
     </main>

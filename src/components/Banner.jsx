@@ -1,7 +1,7 @@
 import { Plus } from "lucide-react";
 
 const summaryData = [
-  { id: 1, value: "10", label: "Total Friends" },
+  { id: 1, value: "12", label: "Total Friends" },
   { id: 2, value: "3", label: "On Track" },
   { id: 3, value: "6", label: "Need Attention" },
   { id: 4, value: "12", label: "Interactions This Month" },
