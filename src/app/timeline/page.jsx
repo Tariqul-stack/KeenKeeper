@@ -1,17 +1,12 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { Phone, MessageSquare, Video } from "lucide-react";
+import { useMemo, useState } from "react";
+import { Phone, MessageSquare, Video, ListFilter } from "lucide-react";
 import { getTimelineEntries } from "@/lib/timelineStorage";
 
 const TimelinePage = () => {
-  const [entries, setEntries] = useState([]);
+  const [entries] = useState(() => getTimelineEntries());
   const [filter, setFilter] = useState("all");
-
-  useEffect(() => {
-    const storedEntries = getTimelineEntries();
-    setEntries(storedEntries);
-  }, []);
 
   const filteredEntries = useMemo(() => {
     if (filter === "all") return entries;
@@ -41,17 +36,54 @@ const TimelinePage = () => {
       <div className="mx-auto max-w-5xl">
         <h1 className="text-5xl font-extrabold text-slate-800">Timeline</h1>
 
-        <div className="mt-6">
-          <select
-            value={filter}
-            onChange={(e) => setFilter(e.target.value)}
-            className="w-full max-w-xs rounded-xl border border-slate-200 bg-white px-4 py-3 text-lg text-slate-600 outline-none"
+        <div className="mt-6 flex flex-wrap gap-3 rounded-2xl border border-slate-200 bg-white p-2 shadow-sm w-fit">
+          <button
+            onClick={() => setFilter("all")}
+            className={`inline-flex items-center gap-2 rounded-xl px-5 py-3 text-base font-semibold transition-all duration-200 ${
+              filter === "all"
+                ? "bg-[#1F5C4A] text-white shadow-[0_8px_24px_rgba(31,92,74,0.18)]"
+                : "bg-transparent text-slate-600 hover:bg-slate-100"
+            }`}
           >
-            <option value="all">All Interactions</option>
-            <option value="call">Call</option>
-            <option value="text">Text</option>
-            <option value="video">Video</option>
-          </select>
+            <ListFilter size={18} />
+            All
+          </button>
+
+          <button
+            onClick={() => setFilter("call")}
+            className={`inline-flex items-center gap-2 rounded-xl px-5 py-3 text-base font-semibold transition-all duration-200 ${
+              filter === "call"
+                ? "bg-[#1F5C4A] text-white shadow-[0_8px_24px_rgba(31,92,74,0.18)]"
+                : "bg-transparent text-slate-600 hover:bg-slate-100"
+            }`}
+          >
+            <Phone size={18} />
+            Call
+          </button>
+
+          <button
+            onClick={() => setFilter("text")}
+            className={`inline-flex items-center gap-2 rounded-xl px-5 py-3 text-base font-semibold transition-all duration-200 ${
+              filter === "text"
+                ? "bg-[#1F5C4A] text-white shadow-[0_8px_24px_rgba(31,92,74,0.18)]"
+                : "bg-transparent text-slate-600 hover:bg-slate-100"
+            }`}
+          >
+            <MessageSquare size={18} />
+            Text
+          </button>
+
+          <button
+            onClick={() => setFilter("video")}
+            className={`inline-flex items-center gap-2 rounded-xl px-5 py-3 text-base font-semibold transition-all duration-200 ${
+              filter === "video"
+                ? "bg-[#1F5C4A] text-white shadow-[0_8px_24px_rgba(31,92,74,0.18)]"
+                : "bg-transparent text-slate-600 hover:bg-slate-100"
+            }`}
+          >
+            <Video size={18} />
+            Video
+          </button>
         </div>
 
         <div className="mt-8 space-y-4">
