@@ -18,3 +18,4 @@ export const getFilteredEntries = (entries, filter) => {
   if (filter === "all") return entries;
   return entries.filter((entry) => entry.type === filter);
 };
+
