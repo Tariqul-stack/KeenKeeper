@@ -2,7 +2,7 @@ import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#244D3F] text-white py-16 mt-20">
+    <footer className="bg-[#244D3F] text-white py-16 ">
       <div className="max-w-6xl mx-auto px-6 text-center">
         {/* Logo */}
         <h2 className="text-5xl font-bold mb-4">KeenKeeper</h2>

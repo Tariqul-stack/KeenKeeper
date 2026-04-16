@@ -1,12 +1,5 @@
 import friends from "@/data/friends.json";
-import {
-  BellRing,
-  Archive,
-  Trash2,
-  Phone,
-  MessageSquare,
-  Video,
-} from "lucide-react";
+import { BellRing, Archive, Trash2 } from "lucide-react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import QuickCheckIn from "@/components/QuickCheckIn";

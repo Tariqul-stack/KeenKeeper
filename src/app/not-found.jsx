@@ -4,12 +4,12 @@ const NotFound = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-6 text-center">
       {/* Badge */}
-      <span className="inline-block text-xs font-medium tracking-widest uppercase text-pink-700 bg-pink-50 px-4 py-1.5 rounded-full mb-8">
+      <span className="inline-block text-md font-medium tracking-widest uppercase text-pink-700 bg-pink-50 px-4 py-1.5 rounded-full mb-8">
         Error
       </span>
 
       {/* 404 number */}
-      <div className="flex items-center gap-1 text-[96px] font-medium leading-none tracking-tighter text-gray-900 mb-2">
+      <div className="flex items-center gap-1 text-[96px] font-bold leading-none tracking-tighter text-gray-900 mb-2">
         <span>4</span>
         <span className="w-22 h-22 rounded-full border-[3px] border-gray-200 bg-gray-100 flex items-center justify-center text-[72px]">
           0
@@ -39,12 +39,12 @@ const NotFound = () => {
       <div className="flex gap-3 flex-wrap justify-center">
         <Link
           href="/"
-          className="px-6 py-2.5 rounded-full bg-gray-900 text-white text-sm font-medium hover:bg-gray-700 transition-colors"
+          className="px-6 py-2.5 rounded-full bg-[#244D3F] text-white text-sm font-medium hover:bg-gray-700 transition-colors"
         >
           Go home
         </Link>
         <Link
-          href="javascript:history.back()"
+          href="/timeline"
           className="px-6 py-2.5 rounded-full border border-gray-300 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors"
         >
           Go back

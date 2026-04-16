@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌿 KeenKeeper — Keep Your Friendships Alive
 
-## Getting Started
+KeenKeeper is a personal friendship tracker that helps you stay connected with the people who matter most. Log your interactions, visualize your communication patterns, and never let important relationships fade away.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+
+- **Quick Check-In** — Log a call, text, or video interaction with a friend in one click
+- **Interaction Timeline** — View a chronological history of all your check-ins
+- **Pie Chart Analytics** — Visualize your interaction breakdown by type (Call, Text, Video)
+- **Friend Profiles** — Dedicated pages for each friend with their interaction history
+- **Toast Notifications** — Instant feedback when an interaction is logged
+- **Responsive Design** — Works seamlessly on mobile and desktop
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org/) (App Router)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Charts:** [Recharts](https://recharts.org/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Notifications:** [Sonner](https://sonner.emilkowal.ski/)
+- **Storage:** Local storage via custom `timelineStorage` utility
+
+---
+
+## 📁 Project Structure
+
+```
+keenkeeper/
+├── app/
+│   ├── page.jsx                  # Home / dashboard
+│   ├── not-found.jsx             # Custom 404 page
+│   └── timeline/
+│       └── page.jsx              # Timeline view
+├── components/
+│   ├── QuickCheckIn.jsx          # Log interactions (call, text, video)
+│   └── InteractionPieChart.jsx   # Donut chart by interaction type
+├── lib/
+│   └── timelineStorage.js        # Save/read entries from localStorage
+└── public/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prerequisites
 
-## Learn More
+- Node.js `18+`
+- npm or yarn
 
-To learn more about Next.js, take a look at the following resources:
+### Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Install dependencies
+npm install
 
-## Deploy on Vercel
+# Start the development server
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📊 How It Works
+
+1. **Add friends** to your KeenKeeper dashboard.
+2. **Log interactions** using the Quick Check-In panel — choose between Call, Text, or Video.
+3. **View your timeline** to see a chronological log of every check-in.
+4. **Analyze patterns** with the interaction pie chart to see which communication style you use most.
+
+---
+
+## 🎨 Design
+
+KeenKeeper uses a calm, earthy color palette centered around deep forest green (`#1F5C4A`) and soft white/slate tones, reflecting the warmth and longevity of meaningful friendships.
+
+---
+
+## 📦 Key Components
+
+### `QuickCheckIn`
+Renders three action buttons (Call, Text, Video) for a given friend. On click, creates a new timeline entry with a unique ID, the friend's details, interaction type, and timestamp — then saves it via `saveTimelineEntry`.
+
+### `InteractionPieChart`
+Accepts an array of timeline entries and renders a donut chart using Recharts, breaking down interactions by type. Gracefully handles the empty state when no data is available.
+
+### `NotFound` (404 Page)
+A custom 404 page styled to match the KeenKeeper brand, with navigation shortcuts back to home and the timeline.
+
+---
+
+> Built with 💚 to keep the friendships you care about alive.

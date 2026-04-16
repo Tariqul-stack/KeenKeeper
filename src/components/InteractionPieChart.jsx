@@ -43,7 +43,7 @@ const InteractionPieChart = ({ entries }) => {
         By Interaction Type
       </h2>
 
-      <div className="mt-8 h-[380px] w-full">
+      <div className="mt-8 h-95 w-full">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie
