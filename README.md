@@ -1,5 +1,9 @@
 # 🌿 KeenKeeper — Keep Your Friendships Alive
 
+## 🌐 Live Demo
+
+[![Netlify Status](https://img.shields.io/badge/Live%20Demo-keenkeeper-1F5C4A?style=for-the-badge&logo=netlify)](https://keenkeeper-website.netlify.app/)
+
 KeenKeeper is a personal friendship tracker that helps you stay connected with the people who matter most. Log your interactions, visualize your communication patterns, and never let important relationships fade away.
 
 ---
@@ -62,10 +66,6 @@ npm install
 # Start the development server
 npm run dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
----
 
 ## 📊 How It Works
 
