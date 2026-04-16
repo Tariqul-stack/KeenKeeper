@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import QuickCheckIn from "@/components/QuickCheckIn";
 
 const FriendDetailsPage = async ({ params }) => {
-  await new Promise((resolve) => setTimeout(resolve, 10000));
+  await new Promise((resolve) => setTimeout(resolve, 500));
   const { id } = await params;
 
   const friend = friends.find((item) => item.id === Number(id));
